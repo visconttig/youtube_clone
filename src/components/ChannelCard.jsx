@@ -5,20 +5,11 @@ import { Link } from "react-router-dom";
 
 import { demoProfilePicture } from "../utils/constants.js";
 
-const ChannelCard = ({ channelDetail }) => {
+const ChannelCard = () => {
     return (
-        <Box sx={{ boxShadow: "no", borderRadius: "20px"}} >
-            <Link to={`/channel/${channelDetail.id.channelId}`} >
-                <CardContent sx={{ display: "flex" , flexDirection: "column",
-            justifyContent: "center" , textAlign: "center", color: "#fff"}}>
-                <CardMedia 
-                image={channelDetail?.snippet?.thumbnails?.high?.url || demoProfilePicture}
-                alt={channelDetail.snippet.title} 
-                sx={{ borderRadius: "50%", heigh: "180px", width: "180px"}} />
-
-                </CardContent>
-            </Link>
-        </Box>
+        <div>
+            Im a ChannelCard ;)
+        </div>
     );
 };
 
