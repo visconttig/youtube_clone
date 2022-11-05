@@ -3,7 +3,6 @@ import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Box } from "@mui/material";
 import { ChannelDetail, Feed, Navbar, SearchFeed, VideoDetail } from "./components";
-require("dotenv").config();
 
 
 const App = () => (
