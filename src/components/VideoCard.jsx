@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Typography, Card, CardContent, CardMedia } from "@mui/material";
-import { CheckCircle } from "@mui/icons-material";
+import { CheckCircle, Preview } from "@mui/icons-material";
 import { demoThumbnailUrl, demoVideoUrl, demoVideoTitle, demoChannelUrl, demoChannelTitle } from "../utils/constants.js";
+//import youtubeImage from "youtube-preview.jpg";
 
 
 const VideoCard = ({video: {id: {videoId }, snippet }}) => {
@@ -10,7 +11,10 @@ const VideoCard = ({video: {id: {videoId }, snippet }}) => {
     return (
         <Card sx={{ width: { md: "320px", xs: "100%"}, boxShadow: "none", borderRadius: 0}}>
             <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
-            <CardMedia image={snippet.thumbnails.high.url}
+
+            <CardMedia 
+            component="img"
+            image={snippet.thumbnails.high.url || require("../assets/images/youtube-preview.jpg")}
             alt={snippet.title}
             sx={{ width: { md: "358px", xs: "100%" }, height: 180 }} />
             </Link>

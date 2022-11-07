@@ -3,9 +3,9 @@ import {useState, useEffect} from "react";
 import {json, Link, useParams} from "react-router-dom";
 import ReactPlayer from "react-player";
 import {Typography, Box, Stack} from "@mui/material";
-import {CheckCircle} from "@mui/icons-material";
+import CheckCircle from "@mui/icons-material/CheckCircle";
 
-import {Videos} from "./index.js";
+import {Videos, Loader } from "./index.js";
 import { fetchFromAPI } from "../utils/fetchFromAPI.js";
 
 const VideoDetail = () => {
@@ -18,7 +18,7 @@ const VideoDetail = () => {
         setVideoDetail(data?.items[0])
         ).catch((error) => (console.log({error})));
 
-        fetchFromAPI(`videos?part=snippet&relatedToVideoId=${id}&type=video`)
+        fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`)
         .then((data) => 
             setVideos(data.items)
         )

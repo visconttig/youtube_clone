@@ -14,7 +14,7 @@ const SearchFeed = () => {
     
 
     useEffect(() => {
-        fetchFromAPI(`search?part=snippet&q=${searchTerm}`).then((data) => {
+        fetchFromAPI(`search?part=snippet&q=${searchTerm}&regionCode=US`).then((data) => {
             setVideos(data.items)
         });
 
